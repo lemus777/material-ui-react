@@ -23,6 +23,7 @@ const App = () => {
             setNotFound(true); // el estado NotFound pasa a true
         } else {
             setUserState(userResponse);
+            setNotFound(false);
         }
     }
     console.log(userState);
@@ -42,7 +43,7 @@ const App = () => {
             flexDirection: 'column',
             alignItems: 'center'
         }}>
-            <Searcher inputUser={inputUser} setInputUser={setInputUser} />
+            <Searcher inputUser={inputUser} setInputUser={setInputUser} notFound={notFound} />
             <UserCard userState={userState} />
         </Container>
     )
